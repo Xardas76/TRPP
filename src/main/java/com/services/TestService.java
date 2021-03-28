@@ -1,18 +1,29 @@
 package com.services;
 
-import com.Student;
+import com.serializable.Student;
 import com.entities.Session;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class TestService {
+    private List<Session> currentSessions;
 
     public TestService() {
-        List<Session> currentSessions = new ArrayList<>();
+        currentSessions = new ArrayList<>();
     }
 
     public void startTestSession(Student student) {
+        currentSessions.add(new Session(student.getName(), student.getGroup()));
+    }
+
+    public String getQuestionPage(Integer pageNum) {
+        return "test";
+    }
+
+    public void addAnswer(int questionNum, String answer) {
 
     }
 }

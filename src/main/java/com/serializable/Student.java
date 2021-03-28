@@ -1,4 +1,4 @@
-package com;
+package com.serializable;
 
 public class Student {
     private String name;
