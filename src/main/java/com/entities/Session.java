@@ -2,6 +2,8 @@ package com.entities;
 
 import java.util.*;
 
+/** Класс сессии решения теста.
+ * Содержит время начала и конца тестирования, данные студента, ответы на вопросы.  */
 public class Session {
     private Date startDate;
     private Date finishDate;
@@ -20,6 +22,7 @@ public class Session {
         this.group = group;
     }
 
+    /** Завершает сессию и фиксирует время сдачи. */
     public void finish() {
         finishDate = Calendar.getInstance().getTime();
     }
