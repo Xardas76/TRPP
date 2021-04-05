@@ -38,7 +38,6 @@ public class FrontController {
      * Получить следующий вопрос.
      * Принимает JSON в параметрах запроса страницу вопроса и ответ на предыдущий вопрос
      * Возвращает страницу с запрошенным вопросом*/
-    //Add ThyMeLeaf page parsing
     @GetMapping("/test")
     public String getQuestion(@RequestParam(required = false, name = "page") Integer askQuestionNum,
                                @RequestParam(required = false) String answer) {
