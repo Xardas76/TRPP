@@ -1,4 +1,4 @@
-package com.entities;
+package com.objects;
 
 import java.util.*;
 
@@ -13,10 +13,10 @@ public class Session {
     private List<Long> questions; //question num in test: id in DB
     //private Integer numberOfQuestions;
 
-    public Session(String name, String group) {
+    public Session(String name, String group, Integer numberOfQuestions) {
         startDate = Calendar.getInstance().getTime();
-        answers = new ArrayList<>();
-        questions = new ArrayList<>();
+        answers = new ArrayList<>(numberOfQuestions);
+        questions = new ArrayList<>(numberOfQuestions);
 
         this.name = name;
         this.group = group;
@@ -25,5 +25,13 @@ public class Session {
     /** Завершает сессию и фиксирует время сдачи. */
     public void finish() {
         finishDate = Calendar.getInstance().getTime();
+    }
+
+    public void addAnswer(Integer qNum, String answer) {
+        answers.add(qNum, answer);
+    }
+
+    public void setQuestions(List<Long> questions) {
+        this.questions = questions;
     }
 }
