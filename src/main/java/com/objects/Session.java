@@ -1,5 +1,7 @@
 package com.objects;
 
+import com.DBentities.Question;
+
 import java.util.*;
 
 /** Класс сессии решения теста.
@@ -28,10 +30,14 @@ public class Session {
     }
 
     public void addAnswer(Integer qNum, String answer) {
-        answers.add(qNum, answer);
+        answers.add(qNum-1, answer);
     }
 
     public void setQuestions(List<Long> questions) {
         this.questions = questions;
+    }
+
+    public Long getQuestion(int qNum) {
+        return questions.get(qNum-1);
     }
 }

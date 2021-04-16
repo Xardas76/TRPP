@@ -1,10 +1,12 @@
 package com.services;
 
+import com.DBentities.Question;
 import com.repositories.QuestionRepository;
 import com.serializable.Student;
 import com.objects.Session;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.IOException;
@@ -37,9 +39,13 @@ public class TestService {
 
     /** Возвращает страну с вопросом. */
     public String getQuestionPage(Integer pageNum) throws IOException {
+        Long questId = currentSession.getQuestion(pageNum);
+        Question question = allQuestions.getOne(questId);
+
         File input = new File("test");
         Document doc = Jsoup.parse(input, "UTF-8", "");
-        //Element span = doc.select("span").first();
+        Element questionTag = doc.select("p.question").first();
+        questionTag.text(question.getText());
         return "test";
     }
 

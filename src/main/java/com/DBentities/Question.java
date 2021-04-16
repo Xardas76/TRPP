@@ -14,4 +14,8 @@ public class Question {
     private String text;
     private String type;
     private String[] options;
+
+    public String getText() {
+        return text;
+    }
 }

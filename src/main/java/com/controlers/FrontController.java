@@ -12,7 +12,7 @@ import java.io.IOException;
 public class FrontController {
     private TestService service;
 
-    private int currentQuestion;
+    private int currentQuestion; //indicates current page num (from 1)
 
     public FrontController(TestService service) {
         this.service = service;
@@ -47,7 +47,7 @@ public class FrontController {
             service.addAnswer(currentQuestion, answer);
         }
         if (askQuestionNum != null) {
-            currentQuestion = askQuestionNum - 1;
+            currentQuestion = askQuestionNum - 1; //cause we re not yet on requested page
         }
         try {
             return service.getQuestionPage(++currentQuestion); //forms html doc with question
