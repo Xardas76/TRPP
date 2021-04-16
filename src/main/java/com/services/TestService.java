@@ -3,8 +3,11 @@ package com.services;
 import com.repositories.QuestionRepository;
 import com.serializable.Student;
 import com.objects.Session;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.springframework.stereotype.Component;
-
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -32,7 +35,11 @@ public class TestService {
         currentSession.setQuestions(new ArrayList<>(generated));
     }
 
-    public String getQuestionPage(Integer pageNum) {
+    /** Возвращает страну с вопросом. */
+    public String getQuestionPage(Integer pageNum) throws IOException {
+        File input = new File("test");
+        Document doc = Jsoup.parse(input, "UTF-8", "");
+        //Element span = doc.select("span").first();
         return "test";
     }
 

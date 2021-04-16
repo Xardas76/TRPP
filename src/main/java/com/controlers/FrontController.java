@@ -5,6 +5,8 @@ import com.services.TestService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 /** Контроллер для работы с тестом*/
 @Controller
 public class FrontController {
@@ -47,6 +49,10 @@ public class FrontController {
         if (askQuestionNum != null) {
             currentQuestion = askQuestionNum - 1;
         }
-        return service.getQuestionPage(++currentQuestion); //forms html doc with question
+        try {
+            return service.getQuestionPage(++currentQuestion); //forms html doc with question
+        } catch (IOException e) {
+            return "Error occurred";
+        }
     }
 }
