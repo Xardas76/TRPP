@@ -1,10 +1,15 @@
 package com.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 @SuppressWarnings("unused")
 public class Question {
+    @GeneratedValue
+    @Id
+    private Long id;
     private String text;
     private String type;
     private String option1;
