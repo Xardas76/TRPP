@@ -1,12 +1,17 @@
-package com.objects;
+package com.entities;
 
-import com.DBentities.Question;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.*;
 
 /** Класс сессии решения теста.
- * Содержит время начала и конца тестирования, данные студента, ответы на вопросы.  */
+ * Содержит время начала и конца тестирования, данные студента, ответы студента на вопросы.  */
+@Entity
 public class Session {
+    @Id
+    @GeneratedValue
+    private Long id;
     private Date startDate;
     private Date finishDate;
     private String name;

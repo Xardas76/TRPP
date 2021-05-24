@@ -1,8 +1,9 @@
-package com.DBentities;
+package com.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 @SuppressWarnings("unused")
@@ -13,6 +14,7 @@ public class Question {
 
     private String text;
     private String type;
+    @OneToMany
     private String[] options;
 
     public void setText(String text) {

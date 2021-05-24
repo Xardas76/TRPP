@@ -1,6 +1,6 @@
 package com.services;
 
-import com.DBentities.Question;
+import com.entities.Question;
 import com.repositories.QuestionRepository;
 import org.springframework.stereotype.Component;
 
