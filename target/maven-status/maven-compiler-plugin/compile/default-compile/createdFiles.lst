@@ -1,6 +1,11 @@
+com\DBentities\Question.class
+com\Main.class
+com\DBentities\Answer.class
+com\services\DBService.class
+com\controlers\RestController.class
+com\repositories\AnswerRepository.class
 com\controlers\FrontController.class
 com\serializable\Student.class
-com\Main.class
-com\entities\Session.class
-com\controlers\RestController.class
+com\objects\Session.class
+com\repositories\QuestionRepository.class
 com\services\TestService.class
